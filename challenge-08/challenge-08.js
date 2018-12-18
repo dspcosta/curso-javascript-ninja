@@ -5,12 +5,20 @@ desses parâmetros.
 */
 // ?
 
+var sum  = function calculateSum(par1,par2){
+	return par1 + par2;
+}
+
+console.log(sum(5,5));
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-// ?
+// 
+
+console.log('A soma de 5 e 5 é igual a ' +sum(5,5) +'.');
+
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -18,17 +26,24 @@ Mostre no console o nome da função criada acima, com a frase:
 */
 // ?
 
+console.log('O nome da função que faz a soma é ' +sum.name+ '.');
+
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 // ?
 
+function showName () {
+	return 'Daniel';
+}
+
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 // ?
 
+var varShowName	= showName;
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
@@ -36,6 +51,7 @@ atribuída a ela, com a seguinte frase:
 */
 // ?
 
+console.log('A função ' +varShowName.name+ ' retorna ' + varShowName()+'.');
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
 - A função deve receber um parâmetro que dirá qual operação matemática ela
@@ -48,7 +64,81 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-// ?
+// 
+
+function calculator(operador, par1, par2){
+	switch (operador) {
+		case '+':
+			operador = '+';
+			
+			
+			function calculo(par1, par2){
+				soma = par1 + par2;
+				return soma;
+			};
+
+			console.log( 'Resultado da operação: ' + par1+ operador + par2 + ' = ' +calculo(par1,par2));
+			break;
+			
+
+		case '-':
+			operador = '-';
+			
+
+			function calculo(par1, par2){
+				menos = par1 - par2;
+				return menos;
+			};
+
+			console.log( 'Resultado da operação: ' + par1 + operador + par2 + ' = ' +calculo(par1,par2));
+			break;
+		case '*':
+			operador = '*';
+	
+
+			function calculo(par1, par2){
+				mult = par1 * par2;
+				return mult;
+			};
+
+			console.log( 'Resultado da operação: ' + par1 + operador + par2 + ' = ' +calculo(par1,par2));
+			break;
+
+		case '/':
+			operador = '/';
+			
+			function calculo(par1, par2){
+				div = par1 / par2;
+				return div;
+			};
+
+			console.log( 'Resultado da operação: ' + par1 + operador + par2 + ' = ' +calculo(par1,par2));
+			break;
+
+		case '%':
+			operador = '%';
+			
+			function calculo(par1, par2){
+				mod = par1 % par2;
+				return mod;
+			};
+
+			console.log( 'Resultado da operação: ' + par1 + operador + par2 + ' = ' +calculo(par1,par2));
+
+			break;
+
+		default:
+			return console.log('Operação inválida, insira um operador conhecido: +`, `-`, `*`, `/` ou `%`.')
+			
+	}
+
+
+}
+
+
+
+
+calculator('%',10,5);
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
